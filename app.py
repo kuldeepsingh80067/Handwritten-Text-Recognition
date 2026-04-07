@@ -51,15 +51,22 @@ def extract_text(img):
 
     return text
 
-uploaded = st.file_uploader("Upload Image", type=["png", "jpg", "jpeg"])
-camera = st.camera_input("📷 Take Photo")
+# ✅ NEW: USER CHOICE
+option = st.radio("Choose input method:", ["Upload Image", "Use Camera"])
 
 image = None
 
-if uploaded:
-    image = Image.open(uploaded)
-elif camera:
-    image = Image.open(camera)
+if option == "Upload Image":
+    uploaded = st.file_uploader("Upload Image", type=["png", "jpg", "jpeg"])
+    if uploaded:
+        image = Image.open(uploaded)
+
+elif option == "Use Camera":
+    camera = st.camera_input("📷 Take Photo")
+    if camera:
+        image = Image.open(camera)
+
+# ------------------------
 
 if image is not None:
 
