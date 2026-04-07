@@ -1,6 +1,7 @@
 streamlit
-torch
-transformers
 pillow
-opencv-python-headless
 numpy
+opencv-python-headless
+easyocr
+torch
+torchvision
