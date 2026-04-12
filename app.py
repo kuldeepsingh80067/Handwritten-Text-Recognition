@@ -51,7 +51,7 @@ def extract_text(img):
 
     return text
 
-# ✅ NEW: USER CHOICE
+
 option = st.radio("Choose input method:", ["Upload Image", "Use Camera"])
 
 image = None
@@ -66,7 +66,6 @@ elif option == "Use Camera":
     if camera:
         image = Image.open(camera)
 
-# ------------------------
 
 if image is not None:
 
